@@ -1,0 +1,31 @@
+//media_mixin.scss
+@mixin _1440 {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin _1200 {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin _1024 {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin _768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin _576 {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+@mixin _320 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}

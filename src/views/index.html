@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>copy trello</title>
+</head>
+<body>
+
+  <div class="app">
+    <nav>
+      <button class="add-boards">Добавить доску</button>
+<!--      <button class="burger">bgr</button>-->
+      <select name="bg" id="changeBg" style="width: 100px">
+      </select>
+    </nav>
+    <div class="boards">
+      <div class="board">
+        <h4 contenteditable="true" class="board__title">Введите название</h4>
+
+        <ul class="list-card">
+          <li title="кликни два раза чтобы удалить" class="card" draggable="true"> Пример карточки </li>
+        </ul>
+
+        <div class="form">
+          <label for="addCard" style="display: none"></label>
+          <textarea class="textarea" name="add__card" id="addCard" placeholder="Введите название для этой карточки"></textarea>
+          <div class="form__buttons">
+            <button class="form-add__card-btn">Добавить карточку</button>
+            <button class="form-cancel__card-btn">Отмена</button>
+          </div>
+        </div>
+
+        <button class="add__button-card"> <span> + </span> Добавить карточку </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

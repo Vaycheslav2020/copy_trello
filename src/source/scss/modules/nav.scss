@@ -1,0 +1,46 @@
+nav {
+  width: inherit;
+  padding: 10px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .add-boards {
+    width: 23vw;
+    height: 35px;
+    min-width: 200px;
+    margin: 0 1vw;
+    text-align: center;
+    line-height: 100%;
+    background-color: #fff9;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #0f0f0f;
+    transition: all 300ms ease;
+    box-shadow: -3px 5px 10px #3e3e3e;
+
+    &:hover {
+      background-color: #e3e3e3;
+    }
+  }
+
+  .burger {
+    width: 23vw;
+    height: 35px;
+    margin: 0 1vw;
+    text-align: center;
+    line-height: 100%;
+    background-color: #fff9;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #0f0f0f;
+    transition: all 300ms ease;
+    box-shadow: -3px 5px 10px #3e3e3e;
+
+    &:hover {
+      background-color: #e3e3e3;
+    }
+  }
+}

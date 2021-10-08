@@ -1,0 +1,53 @@
+.form {
+  display: none;
+  border-radius: 5px;
+  margin-top: auto;
+
+  .textarea {
+    width: 100%;
+    resize: none;
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffffff;
+    padding: 10px;
+    outline: none;
+
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    button {
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+      padding: 0 10px;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 100%;
+
+      &:hover {
+        opacity: .9;
+      }
+    }
+
+    .form-add__card-btn {
+      display: none;
+      flex: 1 1 auto;
+      background-color: dodgerblue;
+      margin-right: 8px;
+    }
+
+    .form-cancel__card-btn {
+      flex: 0 1 auto;
+      background-color: red;
+      margin-left: auto;
+    }
+  }
+}
