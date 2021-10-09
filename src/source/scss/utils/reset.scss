@@ -10,11 +10,17 @@ html, body {
   font-size: 18px;
 }
 
+.wrapper {
+  position: relative;
+}
+
 ul {
   list-style: none;
 }
 
 button {
+  border: none;
+  background: none;
   cursor: pointer;
   user-select: none;
 }

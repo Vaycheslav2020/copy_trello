@@ -2,16 +2,89 @@ const listsCard = document.querySelectorAll('.list-card'),
   addCardBtn = document.querySelector('.add__button-card'),
   addFormCardBtn = document.querySelector('.form-add__card-btn'),
   cancelFormCardBtn = document.querySelector('.form-cancel__card-btn'),
+  app = document.querySelector('.app'),
   textarea = document.querySelector('.textarea'),
   form = document.querySelector('.form'),
-  addBoardBtn = document.querySelector('.add-boards')
+  addBoardBtn = document.querySelector('.add-boards'),
+  burger = document.querySelector('.burger__menu'),
+  settingsMenu = document.querySelector('.settings__menu')
 
 let value,
   draggableItem = null
 
+
+const buttons = document.querySelectorAll('.settings__list-item')
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (!button.id) {
+      alert('Тут ничего пока нет!')
+    }
+  })
+})
+
+function foo() {
+
+  let items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  const listImage = document.createElement('div')
+  listImage.classList.add('list__image')
+
+  items.forEach(item => {
+
+    const label = document.createElement('label')
+    const input = document.createElement('input')
+    const img = document.createElement('img')
+
+    input.type = 'radio'
+    input.name = 'bg-image'
+
+    label.for = `bg_${item}`
+    input.id = `bg_${item}`
+    input.value = `${item}`
+    img.src = `/source/image/background/bg_${item}.jpg`
+
+    label.append(input)
+    label.append(img)
+    listImage.append(label)
+  })
+
+  settingsMenu.append(listImage)
+}
+
+foo()
+
+burger.addEventListener('click', function () {
+  const listImage = document.querySelector('.list__image')
+  settingsMenu.classList.add('active')
+  app.style.filter = 'blur(5px)'
+  listImage.style.display = 'none'
+})
+
+settingsMenu.addEventListener('click', function (event) {
+  const evt = event.target
+  const listItem = document.querySelector('.settings__list')
+  const listImage = document.querySelector('.list__image')
+
+  if (evt.classList.contains('settings__close')) {
+    if (listImage.style === 'block') {
+      listImage.style.display = 'none'
+    }
+    if (listItem.style.display === 'none') {
+      listItem.style.display = 'block'
+    }
+    app.style.filter = 'none'
+    this.classList.remove('active')
+  }
+
+  if (evt.id === 'changeBgImg') {
+    listItem.style.display = 'none'
+    const listImage = document.querySelector('.list__image')
+    listImage.style.display = 'flex'
+  }
+})
+
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
   const nav = document.querySelector('nav')
-  const app = document.querySelector('.app')
   nav.remove()
   form.remove()
   addCardBtn.remove()
@@ -134,31 +207,24 @@ function draggableCard() {
 
 draggableCard()
 
-function changeBackground() {
-  const app = document.querySelector('.app')
-  let items = [1,2,3,4,5,6,7,8,9,10,11,12]
+document.addEventListener('DOMContentLoaded', function () {
+  const listImage = document.querySelector('.list__image')
+  listImage.addEventListener('click', function (event) {
 
-  items.forEach(item => {
-    const sel = document.getElementById('changeBg')
-    const option = document.createElement('option')
-
-    option.value = item
-    option.innerText = `image ${item}`
-
-    sel.append(option)
-
-    sel.addEventListener('change', function (e) {
-      let foo = e.target.value
-
-      bg(foo)
-    })
-
-
+    const listItem = document.querySelector('.settings__list')
+    let evt = event.target,
+      val
+    val = evt.value
+    bg(val)
+    this.style.display = 'none'
+    listItem.style.display = 'block'
+    app.style.filter = 'none'
+    settingsMenu.classList.remove('active')
   })
 
   function bg(val) {
-    app.style.backgroundImage = `url('../source/image/background/bg_${val}.jpg')`
+    app.style.backgroundImage = `url('/source/image/background/bg_${val}.jpg')`
   }
+
   bg(1)
-}
-changeBackground()
+})

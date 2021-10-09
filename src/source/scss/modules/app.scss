@@ -5,6 +5,7 @@
   flex-direction: column;
   background: no-repeat center / cover fixed;
   overflow: auto;
+  transition: all 300ms ease-out;
 
   .boards {
     display: flex;
