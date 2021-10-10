@@ -1,7 +1,8 @@
 .settings {
   &__menu {
+    visibility: hidden;
     position: absolute;
-    top: -100vh;
+    top: -100%;
     right: 0;
     width: 35vw;
     min-width: 320px;
@@ -13,6 +14,7 @@
     transition: 350ms ease-out;
 
     &.active {
+      visibility: visible;
       top: 0;
     }
 

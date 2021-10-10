@@ -41,7 +41,7 @@ function foo() {
     label.for = `bg_${item}`
     input.id = `bg_${item}`
     input.value = `${item}`
-    img.src = `/source/image/background/bg_${item}.jpg`
+    img.src = `./source/image/background/bg_${item}.jpg`
 
     label.append(input)
     label.append(img)
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   function bg(val) {
-    app.style.backgroundImage = `url('/source/image/background/bg_${val}.jpg')`
+    app.style.backgroundImage = `url('./source/image/background/bg_${val}.jpg')`
   }
 
   bg(1)
